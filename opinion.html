@@ -3,9 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href= "descargar (2).png" type="image/x-icon">
+    <title>Cuestionario R6</title>
+    
 </head>
 <body>
-    
+    <form action="">
+        <fieldset>
+            <legend>Datos Personales    </legend>
+            <label for="">Nombre:</label><br>
+            <input type="text" placeholder="Ingrese su nombre" required>
+            <br>
+            <br>
+            <label for="">NameTag</label><br>
+            <input type="text" placeholder="Nombre dentro del juego" required>
+            <br>
+            <br>
+        </fieldset>
+        <br>
+        <br>
+        <fieldset>
+            <legend type="text-align: center" >Que bando es su preferido?</legend>
+            <label for="">Lenguaje Favorito:</label>
+            <select name="Lenguaje" id="">
+                <option value="1">Atacante</option>
+                <option value="2">Defensor</option>
+                <option value="3">Me da igual</option>
+            </select>
+            <br>
+            <br>
+            <label for="">Soles jugar partidas competitivas?</label><br>
+            <input type="radio" name="compe">Si, me gusta competir <br>
+            <input type="radio" name="compe">No, prefiero jugar casual
+            <br>
+            <br>
+            <label for="">Si jugas competitivas, que rango sos?</label><br>
+            <input type="radio" name="rango">Cobre
+            <input type="radio" name="rango">Bronce
+            <input type="radio" name="rango">Plata <br>
+            <input type="radio" name="rango">Oro
+            <input type="radio" name="rango">Platino
+            <input type="radio" name="rango">Diamante
+        </fieldset><br><br>
+        <fieldset>
+            <legend>Deja algun comentario sobre tu experiencia jugando</legend>
+            <textarea rows="4" cols="8"
+            maxlength="200"
+            placeholder="Deja tu comentario :)"
+            ></textarea>
+        </fieldset>
+        <br><br>
+        <input type="submit" value="Enviar" style="height: 40px; width: 100px;" > &nbsp&nbsp&nbsp&nbsp
+        <input type="reset" value="Borrar" style="height: 40px; width: 100px;">
+        <br>
+        <br>
+        <br>
+        <a href="index.html" style="font-size: medium;">VOLVER A LA PAGINA PRINCIPAL</a>
+    </form>
 </body>
 </html>
