@@ -8,3 +8,4 @@ Esta pagina te va a enseñar el mundo del Raimbow Six Siege y su variedad de arm
 - Historia de esta gran entrega de Ubisoft.
 - Como funciona este videojuego y en que se basa.
 - Que armas se usan en el meta actual y que tienes que saber de ellas.
+-Imagenes de los operadores
