@@ -1,64 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href= "descargar (2).png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagenes/descargar (2).png" type="image/x-icon">
     <title>Cuestionario R6</title>
-    
 </head>
 <body>
-    <form action="">
-        <fieldset>
-            <legend>Datos Personales    </legend>
-            <label for="">Nombre:</label><br>
-            <input type="text" placeholder="Ingrese su nombre" required>
-            <br>
-            <br>
-            <label for="">NameTag</label><br>
-            <input type="text" placeholder="Nombre dentro del juego" required>
-            <br>
-            <br>
-        </fieldset>
-        <br>
-        <br>
-        <fieldset>
-            <legend type="text-align: center" >Que bando es su preferido?</legend>
-            <label for="">Lenguaje Favorito:</label>
-            <select name="Lenguaje" id="">
-                <option value="1">Atacante</option>
-                <option value="2">Defensor</option>
-                <option value="3">Me da igual</option>
-            </select>
-            <br>
-            <br>
-            <label for="">Soles jugar partidas competitivas?</label><br>
-            <input type="radio" name="compe">Si, me gusta competir <br>
-            <input type="radio" name="compe">No, prefiero jugar casual
-            <br>
-            <br>
-            <label for="">Si jugas competitivas, que rango sos?</label><br>
-            <input type="radio" name="rango">Cobre
-            <input type="radio" name="rango">Bronce
-            <input type="radio" name="rango">Plata <br>
-            <input type="radio" name="rango">Oro
-            <input type="radio" name="rango">Platino
-            <input type="radio" name="rango">Diamante
-        </fieldset><br><br>
-        <fieldset>
-            <legend>Deja algun comentario sobre tu experiencia jugando</legend>
-            <textarea rows="4" cols="8"
-            maxlength="200"
-            placeholder="Deja tu comentario :)"
-            ></textarea>
-        </fieldset>
-        <br><br>
-        <input type="submit" value="Enviar" style="height: 40px; width: 100px;" > &nbsp&nbsp&nbsp&nbsp
-        <input type="reset" value="Borrar" style="height: 40px; width: 100px;">
-        <br>
-        <br>
-        <br>
-        <a href="index.html" style="font-size: medium;">VOLVER A LA PAGINA PRINCIPAL</a>
-    </form>
+
+    <header>
+        <h1>Rainbow Six Siege: Encuesta</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">← Volver al inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Contanos tu experiencia</h2>
+            <p>Completá el formulario y dejanos saber qué pensás del juego.</p>
+
+            <form action="">
+
+                <fieldset>
+                    <legend>Datos Personales</legend>
+
+                    <div class="campo">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" placeholder="Ingrese su nombre" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="nametag">NameTag:</label>
+                        <input type="text" id="nametag" placeholder="Nombre dentro del juego" required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferencias de juego</legend>
+
+                    <div class="campo">
+                        <label for="bando">Bando favorito:</label>
+                        <select name="bando" id="bando">
+                            <option value="1">Atacante</option>
+                            <option value="2">Defensor</option>
+                            <option value="3">Me da igual</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label>¿Soles jugar partidas competitivas?</label>
+                        <div class="radio-grupo">
+                            <label class="radio-opcion">
+                                <input type="radio" name="compe" value="si">
+                                Sí, me gusta competir
+                            </label>
+                            <label class="radio-opcion">
+                                <input type="radio" name="compe" value="no">
+                                No, prefiero jugar casual
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label>Si jugás competitivas, ¿qué rango sos?</label>
+                        <div class="radio-grupo radio-grupo--rangos">
+                            <label class="radio-opcion"><input type="radio" name="rango" value="cobre"> Cobre</label>
+                            <label class="radio-opcion"><input type="radio" name="rango" value="bronce"> Bronce</label>
+                            <label class="radio-opcion"><input type="radio" name="rango" value="plata"> Plata</label>
+                            <label class="radio-opcion"><input type="radio" name="rango" value="oro"> Oro</label>
+                            <label class="radio-opcion"><input type="radio" name="rango" value="platino"> Platino</label>
+                            <label class="radio-opcion"><input type="radio" name="rango" value="diamante"> Diamante</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Tu experiencia</legend>
+                    <div class="campo">
+                        <label for="comentario">Dejá un comentario sobre tu experiencia jugando:</label>
+                        <textarea id="comentario" rows="5" maxlength="200"
+                            placeholder="Dejá tu comentario :)"></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="form-botones">
+                    <input type="submit" value="Enviar" class="btn btn-enviar">
+                    <input type="reset"  value="Borrar"  class="btn btn-borrar">
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Rainbow Six Siege — Manual de Armas</p>
+    </footer>
+
 </body>
 </html>
