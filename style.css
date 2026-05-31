@@ -1,48 +1,53 @@
 :root {
-    --color-primario: #f0f0f0;
-    --color-secundario: #333;
-    --fuente: verdana;
-    --espaciado: 20px;
+    --color-fondo:        #0e0e0e;
+    --color-superficie:   #1a1a1a;
+    --color-tarjeta:      #222222;
+    --color-borde:        #333333;
+    --color-borde2:       #e8a020;
+    --color-borde-hover:  #ffb833;
+    --color-texto:        #d4d4d4;
+    --color-titulo:       #ffffff;
+    --color-link:         #e8a020;
+
+    --fuente-titulo: 'Rajdhani', sans-serif;
+    --fuente-cuerpo: 'Source Sans 3', sans-serif;
+
+    --sombra:     0 4px 16px rgba(0, 0, 0, 0.6);
+    --sombra-hover: 0 6px 24px rgba(232, 160, 32, 0.25);
+    --transicion: 0.3s ease;
 }
-body{
-    margin: 0;
-    font-family: var(--fuente);
-    line-height: 1.4;
-}
-header{
-    background-color: var(--color-primario);
-    padding: var(--espaciado);
-    text-align: center;
-    border-bottom: 2px solid #ddd;
-    background-image: linear-gradient(to bottom, var(--color-primario), #777474);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.7);
-    
-}
-nav{
-    background-color: var(--color-secundario);
-padding: 10px;
-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5)
-}
-nav ul{
-    list-style: none;
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap');
+
+    /* Adapte el css para cualquier navegador y border-box para cajas sin tener que calcular */
+    *, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
 }
-nav li{
-    margin: 0 15px;
-    position: relative;
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-cuerpo);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+/* Estableci las fuetes en general */
+h1, h2, h3, h4 {
+    font-family: var(--fuente-titulo);
+    color: var(--color-titulo);
+    letter-spacing: 0.04em;
+}
+/*tamaño de titulos y margenes*/
+h1 { font-size: 2rem; }
+h2 { font-size: 1.6rem; margin-bottom: 0.6rem; }
+h3 { font-size: 1.25rem; margin-bottom: 0.4rem; }
+h4 { font-size: 1.05rem; }
 
-}
-nav a{
-    color:#f0f0f0;
+p  { margin-bottom: 0.9rem; }
+
+a {
+    color: var(--color-link);
     text-decoration: none;
+    transition: color var(--transicion);
 }
-nav li:hover .submenu{
-display:block;
-}
-li a:hover{
-    background-color: #ddd;
-    color:var(--color-secundario)
-}
+a:hover { color: var(--color-borde-hover); text-decoration: underline; }
