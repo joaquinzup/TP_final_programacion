@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagenes/descargar (2).png" type="image/x-icon">
     <title>Manual armas R6</title>
+    <script src="app.js" defer></script>
 </head>
 <body>
     <header>
@@ -18,6 +19,11 @@
             <li> <a href="#opinion">Dejanos tu opinion</a></li>
         </ul> 
     </nav>
+    
+    <button id="btn-tema" aria-label="Cambiar tema">
+        <span class="icono-tema">🌙</span>
+        <span class="label-tema">Oscuro</span>
+    </button>
     </header>
     <main>
         <section id="info">
@@ -206,6 +212,24 @@
                                     <br>
                                     <h3>Cuentanos tus experiencias y opiniones jugando a esta entrega</h3>
                                     <p id="opinion">Para dejar tu opinion presiona <a href="opinion.html">AQUI!</a></p>
+                                
+                                    <section id="buscador">
+                                    <h2><u>Buscador de Armas</u></h2>
+                                    <p>Buscá por nombre de arma u operador, y filtrá por tipo:</p>
+                                    <div class="buscador-controles">
+                                        <input type="text" id="input-busqueda" placeholder="Buscar arma u operador...">
+                                        <select id="filtro-tipo">
+                                            <option value="todos">Todos los tipos</option>
+                                            <option value="DMR">DMR</option>
+                                            <option value="LMG">LMG</option>
+                                            <option value="Escopeta">Escopeta</option>
+                                            <option value="SMG">SMG</option>
+                                            <option value="Pistola">Pistola</option>
+                                        </select>
+                                    </div>
+                                    <div id="resultados-busqueda" class="resultados-grid"></div>
+                                    </section>
+
                                 </main>
     <footer>
         <h4><u>Pagina echa por:</u></h4>
