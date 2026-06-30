@@ -41,3 +41,51 @@ contenedor.innerHTML = "";
     contenedor.appendChild(card);
   });
 }
+
+function filtrarArmas(termino, tipo) {
+  return armas.filter(function (arma) {
+    const coincideTexto = arma.nombre.toLowerCase().includes(termino.toLowerCase()) ||
+                          arma.operador.toLowerCase().includes(termino.toLowerCase());
+    const coincideTipo  = tipo === "todos" || arma.tipo === tipo;
+    return coincideTexto && coincideTipo;
+  });
+}
+
+function validarFormulario(event) {
+  event.preventDefault();
+  limpiarErrores();
+
+  try {
+    const nombre   = document.getElementById("nombre");
+    const nametag  = document.getElementById("nametag");
+    const compe    = document.querySelector('input[name="compe"]:checked');
+    const comentario = document.getElementById("comentario");
+
+    let hayError = false;
+
+    if (!nombre || nombre.value.trim() === "") {
+      mostrarError("error-nombre", "El nombre es obligatorio.");
+      hayError = true;
+    }
+
+    if (!nametag || nametag.value.trim() === "") {
+      mostrarError("error-nametag", "El NameTag es obligatorio.");
+      hayError = true;
+    }
+
+    if (!compe) {
+      mostrarError("error-compe", "Seleccioná si jugás competitivas.");
+      hayError = true;
+    }
+
+    if (hayError) {
+      throw new Error("Formulario incompleto");
+    }
+
+     mostrarExito();
+    event.target.reset();
+
+    } catch (error) {
+    console.warn("Error de validación:", error.message);
+  }
+}
