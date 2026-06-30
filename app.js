@@ -175,3 +175,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const inputBusqueda = document.getElementById("input-busqueda");
   const filtroPorTipo  = document.getElementById("filtro-tipo");
+
+  if (inputBusqueda && filtroPorTipo) {
+    mostrarResultados(armas);
+
+    inputBusqueda.addEventListener("input", function () {
+      const resultados = filtrarArmas(this.value, filtroPorTipo.value);
+      mostrarResultados(resultados);
+    });
+
+    filtroPorTipo.addEventListener("change", function () {
+      const resultados = filtrarArmas(inputBusqueda.value, this.value);
+      mostrarResultados(resultados);
+    });
+  }
+
+  const navLinks = document.querySelectorAll("nav a");
+  navLinks.forEach(function (link) {
+    link.addEventListener("mouseover", function () {
+      this.style.opacity = "0.75";
+    });
+    link.addEventListener("mouseout", function () {
+      this.style.opacity = "1";
+    });
+  });
+
+  agregarTooltipsRangos();
+
+  const formulario = document.querySelector("form");
+  if (formulario) {
+    formulario.addEventListener("submit", validarFormulario);
+    const nombre = document.getElementById("nombre");
+    if (nombre) {
+      nombre.addEventListener("keyup", function () {
+        const errorEl = document.getElementById("error-nombre");
+        if (errorEl && this.value.trim() !== "") {
+          errorEl.style.display = "none";
+        }
+      });
+    }
+  }
+});
