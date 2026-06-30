@@ -137,3 +137,41 @@ function agregarTooltipsRangos() {
     }
   });
 }
+
+function toggleTema() {
+  const body   = document.body;
+  const btn    = document.getElementById("btn-tema");
+  const claro  = body.classList.toggle("tema-claro");
+
+  localStorage.setItem("tema", claro ? "claro" : "oscuro");
+
+  if (btn) {
+    btn.querySelector(".icono-tema").textContent = claro ? "☀️" : "🌙";
+    btn.querySelector(".label-tema").textContent  = claro ? "Claro" : "Oscuro";
+  }
+}
+
+function aplicarTemaGuardado() {
+  const temaGuardado = localStorage.getItem("tema");
+  const btn = document.getElementById("btn-tema");
+
+  if (temaGuardado === "claro") {
+    document.body.classList.add("tema-claro");
+    if (btn) {
+      btn.querySelector(".icono-tema").textContent = "☀️";
+      btn.querySelector(".label-tema").textContent  = "Claro";
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  aplicarTemaGuardado();
+
+  const btnTema = document.getElementById("btn-tema");
+  if (btnTema) {
+    btnTema.addEventListener("click", toggleTema);
+  }
+
+  const inputBusqueda = document.getElementById("input-busqueda");
+  const filtroPorTipo  = document.getElementById("filtro-tipo");
