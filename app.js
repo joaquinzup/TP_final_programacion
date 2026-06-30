@@ -89,3 +89,51 @@ function validarFormulario(event) {
     console.warn("Error de validación:", error.message);
   }
 }
+
+function mostrarError(idElemento, mensaje) {
+  const el = document.getElementById(idElemento);
+  if (el) {
+    el.textContent = mensaje;
+    el.style.display = "block";
+  }
+}
+
+function limpiarErrores() {
+  const errores = document.querySelectorAll(".error-msg");
+  errores.forEach(function (e) {
+    e.textContent = "";
+    e.style.display = "none";
+  });
+
+  const exito = document.getElementById("exito-msg");
+  if (exito) exito.style.display = "none";
+}
+
+function mostrarExito() {
+  const exito = document.getElementById("exito-msg");
+  if (exito) {
+    exito.textContent = "¡Gracias por tu opinión! Fue enviada correctamente.";
+    exito.style.display = "block";
+  }
+}
+
+function agregarTooltipsRangos() {
+  const descripciones = {
+    "Cobre":    "Rango inicial. Se consigue simplemente jugando.",
+    "Bronce":   "Jugadores con algo de experiencia táctica.",
+    "Plata":    "Buen conocimiento del juego y los operadores.",
+    "Oro":      "Comunicación y coordinación ya son clave.",
+    "Platino":  "Jugadores altamente competitivos.",
+    "Diamante": "Élite del juego. Mecánicas muy refinadas.",
+    "Campeón":  "Top 5000 jugadores del servidor. Nivel pro.",
+  };
+
+  const celdas = document.querySelectorAll("table th p, table td");
+  celdas.forEach(function (celda) {
+    const texto = celda.textContent.trim();
+    if (descripciones[texto]) {
+      celda.setAttribute("title", descripciones[texto]);
+      celda.style.cursor = "help";
+    }
+  });
+}
