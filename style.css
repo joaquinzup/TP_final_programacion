@@ -212,7 +212,7 @@ section:hover {
     border-color: var(--color-borde2);
 }
 article {
-    background-color: #a6a3a3;
+    background-color: #484646;
     border-left: 3px solid var(--color-acento);
     border-radius: 6px;
     padding: 1rem 1.2rem;

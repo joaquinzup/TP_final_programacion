@@ -18,6 +18,11 @@ Esta pagina te va a enseñar el mundo del Raimbow Six Siege y explicarte el func
 -- Adaptado a cualquier navegador y dispositivo.
 -- Transiciones y transformaciones.
 
+## JavaScript
+-- Boton para cambiar tema claro o oscuro.
+-- Buscador de armas o personajes.
+-- Uso de validacion y funciones.
+
 Aprender un poco del Raimbow Six Siege, buscar informacion importante y conocer mas del videojuego. 
 ## Autor
 Zupel Joaquin

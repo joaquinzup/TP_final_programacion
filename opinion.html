@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="imagenes/descargar (2).png" type="image/x-icon">
     <title>Cuestionario R6</title>
+    <script src="app.js" defer></script>
 </head>
 <body>
 
@@ -16,6 +17,11 @@
                 <li><a href="index.html">← Volver al inicio</a></li>
             </ul>
         </nav>
+    
+    <button id="btn-tema" aria-label="Cambiar tema">
+        <span class="icono-tema">🌙</span>
+        <span class="label-tema">Oscuro</span>
+    </button>
     </header>
 
     <main>
@@ -30,12 +36,14 @@
 
                     <div class="campo">
                         <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" placeholder="Ingrese su nombre" required>
+                        <input type="text" id="nombre" placeholder="Ingrese su nombre">
+                        <span class="error-msg" id="error-nombre"></span>
                     </div>
 
                     <div class="campo">
                         <label for="nametag">NameTag:</label>
-                        <input type="text" id="nametag" placeholder="Nombre dentro del juego" required>
+                        <input type="text" id="nametag" placeholder="Nombre dentro del juego">
+                        <span class="error-msg" id="error-nametag"></span>
                     </div>
                 </fieldset>
 
@@ -63,6 +71,7 @@
                                 No, prefiero jugar casual
                             </label>
                         </div>
+                        <span class="error-msg" id="error-compe"></span>
                     </div>
 
                     <div class="campo">
@@ -86,6 +95,8 @@
                             placeholder="Dejá tu comentario :)"></textarea>
                     </div>
                 </fieldset>
+
+                <div id="exito-msg" class="exito-msg"></div>
 
                 <div class="form-botones">
                     <input type="submit" value="Enviar" class="btn btn-enviar">
